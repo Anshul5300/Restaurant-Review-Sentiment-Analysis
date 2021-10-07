@@ -1,7 +1,9 @@
 import re
+import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import pickle
+nltk.download('stopwords')
 
 
 def sentiments(review):
@@ -18,7 +20,7 @@ def sentiments(review):
     review = ' '.join(review)
     corpus.append(review)
     
-    with open("C:/Users/Mugdha/Documents/flask-reviews/static/models.pkl","rb") as f:
+    with open(r"C:\Users\Anshul\Desktop\models.pkl","rb") as f:
         models=pickle.load(f)
         
     review_data=models["Vectorizer"].transform([review]).toarray() 

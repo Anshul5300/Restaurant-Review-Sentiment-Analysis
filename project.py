@@ -4,8 +4,9 @@ import re
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+nltk.download('stopwords')
 
-dataset = pd.read_csv('C:/Users/Mugdha/Downloads/6660_9643_bundle_archive/Restaurant_Reviews.tsv', delimiter = '\t', quoting = 3)
+dataset = pd.read_csv(r'C:\Users\Anshul\Desktop\Restaurant_Reviews.tsv', delimiter = '\t', quoting = 3)
 
 corpus = []
 for i in range(0, 1000):
@@ -60,6 +61,6 @@ obj_dict["Vectorizer"]=tf_idf
 obj_dict["BNB"]=classifier
 
 import pickle
-pickle_out=open("C:/Users/Mugdha/Documents/flask-reviews/static/models.pkl","wb")
+pickle_out=open(r"C:\Users\Anshul\Desktop\models.pkl","wb")
 pickle.dump(obj_dict,pickle_out)
 pickle_out.close()
